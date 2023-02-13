@@ -1,5 +1,9 @@
+import InputContext from "./InputContext";
+import { useContext } from "react"
 
 const Body= props=>{
+
+    const {gameArr,setGameArr}=useContext(InputContext)   
     return (
         <div className="body-wrap">
             <div className='body'>

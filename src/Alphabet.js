@@ -3,14 +3,14 @@ import InputContext from "./InputContext";
 
 
 const Alphabet = props =>{
-
- const [enteredLetter, setEnteredLetter] = useState('')
- const ctx = useContext(InputContext)
+ 
+const [gameArr,setGameArr]=useContext(InputContext)
+console.log(gameArr)
 
 const letterClickHndler=(event)=>{
     console.log(event.currentTarget.textContent)
-    ctx.inputLetter = event.currentTarget.textContent;
-    setEnteredLetter(event.currentTarget.textContent)
+    gameArr.inputLetter = event.currentTarget.textContent
+    setGameArr({...gameArr, inputLetter: event.currentTarget.textContent})
 }
 
 

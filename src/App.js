@@ -15,17 +15,28 @@ function App() {
  
 
   const [IsButtonClicked, setButtonClicked] = useState(false)
-  const ctx = useContext(InputContext)
-  const [randomWord, setRandomWord] = useState(ctx)
+ 
+  const [gameArr, setGameArr] = useState({
+    wordStatus:[],
+    inputLetter:'',
+    randomWord:'',
+    inputLetterHadler:()=>{}
+  } 
+)
 
+  function inputLetterHadler(){
+
+  }
   
 
   function startHandler(){
     setButtonClicked(true)
     let random = Math.floor(Math.random()*words.length)
-    console.log(random)
-    ctx.randomWord=words[random]
-    setRandomWord({...ctx, randomWord:words[random]})
+    gameArr.randomWord = words[random]
+    let arrNew = new Array( words[random].length)
+    const wordSt = arrNew.fill('')
+    console.log(wordSt)
+    setGameArr({...gameArr, wordStatus: wordSt ,randomWord:words[random]})
   }
 
   return (
@@ -35,10 +46,10 @@ function App() {
 
        {/* <FinalMessage></FinalMessage> */}
        <Header></Header>
-      <InputContext.Provider value={{randomWord}}>
+      <InputContext.Provider value={[gameArr,setGameArr]}>
         {IsButtonClicked ? <div>
           <Main></Main>
-          <Word randomChoosedWord={ctx.randomWord}></Word>
+          <Word></Word>
         </div> : <button onClick={startHandler}>START GAME</button>
         }
       </InputContext.Provider>

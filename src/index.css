@@ -12,8 +12,8 @@ body {
   margin: 0;
   background-color:var(--main);
  background-image: url('../public/wall.jpg');
- background-repeat: no-repeat;
- background-size:cover;
+ 
+ background-size:100%;
  
 }
 
@@ -265,11 +265,13 @@ body {
     font-size: 30px;
     color:var(--accent);
     border-bottom: 5px white solid;
+    text-align: center;
   }
   
 }
 
 @media (min-width:577px){
+  
 
   .final_message{
     position: absolute;
@@ -327,13 +329,13 @@ header p{
   padding: 0 3% 0 0;
   display: flex;
   flex-wrap: wrap;
-  gap:20px;
+  gap:5%;
   color: white;
 }
 
   .letter{
     text-align: center;
-    font-size: 30px;
+    font-size: 3vw;
     font-weight: 700;
     width: 30px;
   }
@@ -490,9 +492,10 @@ header p{
   .word_li{
     width:30px;
     list-style-type: none;
-    font-size: 30px;
+    font-size: 3vw;
     color:var(--accent);
     border-bottom: 5px white solid;
+    text-align: center;
   }
 
 
