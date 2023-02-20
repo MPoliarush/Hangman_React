@@ -20,7 +20,8 @@ function App() {
     wordStatus:[],
     inputLetter:'',
     randomWord:'',
-    inputLetterHadler:()=>{}
+    inputLetterHadler:()=>{},
+    wrongLetters:''
   } 
 )
 

@@ -5,7 +5,8 @@ const InputContext = React.createContext(
         wordStatus:[],
         inputLetter:'',
         randomWord:'',
-        inputLetterHadler:()=>{}
+        inputLetterHadler:()=>{},
+        wrongLetters:''
     } 
 )
 
