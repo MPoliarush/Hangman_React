@@ -8,11 +8,12 @@
 
 
 body {
-  height: 100vh;
+  
   margin: 0;
   background-color:var(--main);
- /* background-image: url('../public/wall.jpg'); */
- 
+ background-image: url('./workingAssets/back.avif');
+ background-size: contain;
+ background-repeat: no-repeat;
  background-size:100%;
  
 }
@@ -322,7 +323,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top:40%;
+    top:30%;
     background-color: #e8e4ea;
     border-radius: 10px;
     text-align: center;
@@ -539,7 +540,7 @@ header p{
   .word_ul{
     display: flex;
     justify-content: center;
-    gap:10%;
+    gap:5%;
    padding-bottom: 5%;
   }
   
