@@ -20,13 +20,12 @@ function App() {
     wordStatus:[],
     inputLetter:'',
     randomWord:'',
-    inputLetterHadler:()=>{},
-    wrongLetters:''
+    wrongLetters:'',
   } 
 )
 
   function inputLetterHadler(){
-
+   
   }
   
 
@@ -40,17 +39,21 @@ function App() {
     setGameArr({...gameArr, wordStatus: wordSt ,randomWord:words[random]})
   }
 
+
+
+
   return (
    
-    <div>
+    <div className="page_wrapper">
       {/* <Modal> */}
 
-       {/* <FinalMessage></FinalMessage> */}
        <Header></Header>
       <InputContext.Provider value={[gameArr,setGameArr]}>
         {IsButtonClicked ? <div>
           <Main></Main>
           <Word></Word>
+
+          <FinalMessage></FinalMessage>
         </div> : <button onClick={startHandler}>START GAME</button>
         }
       </InputContext.Provider>

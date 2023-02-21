@@ -122,15 +122,15 @@ const letterClickHndler=(event)=>{
     console.log(event.currentTarget.textContent)
 
     gameArr.randomWord.map ( (lett,index) =>{
-        console.log('input '+event.currentTarget.textContent.trim(), 'array '+lett)
+       
 
         if(lett==event.currentTarget.textContent.trim()){
-            console.log('logged 1')
+            
             gameArr.wordStatus[index] = event.currentTarget.textContent.trim();
             console.log(gameArr.wordStatus) 
         }
          if (lett!==event.currentTarget.textContent.trim() && gameArr.randomWord.join('').includes(event.currentTarget.textContent.trim())==false ) {  
-            console.log('logged 2')
+            
             gameArr.wrongLetters += event.currentTarget.textContent.trim() 
             console.log(gameArr.wrongLetters)  
         };
@@ -139,7 +139,7 @@ const letterClickHndler=(event)=>{
         
     })
   
-    setGameArr({...gameArr, inputLetter: event.currentTarget.textContent })
+    setGameArr({...gameArr, inputLetter: event.currentTarget.textContent, wrongLetters:[...new Set(gameArr.wrongLetters)].join("")})
     setIsValid(gameArr.wrongLetters)
 }
 
