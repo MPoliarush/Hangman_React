@@ -1,7 +1,7 @@
 :root{
   --main:#8a5e24;
   --blue:#227C70;
-  --accent:#7fe631;
+  --accent:#3d8109;
   --body:#7abb3a;
 }
 
@@ -239,7 +239,7 @@ body {
     font-size: 30px;
     width: 200px;
     margin: 70px auto;
-    background-color: var(--body);
+    background-color: var(--accent);
     border-radius: 20px;
     padding: 15px 20px;
     color: white;
@@ -524,7 +524,7 @@ header p{
     font-size: 30px;
     width: 300px;
     margin: 150px auto;
-    background-color: var(--body);
+    background-color: var(--accent);
     border-radius: 20px;
     padding: 15px 20px;
     color: white;
