@@ -7,23 +7,15 @@
 
 
 
-body {
-  
-  margin: 0;
-  background-color:var(--main);
- background-image: url('./workingAssets/back.avif');
- background-size: contain;
- background-repeat: no-repeat;
- background-size:100%;
- 
-}
-
- 
-
-
 
 
 @media (min-width:320px){
+  body {
+ 
+    margin: 0;
+   background-color: #e0da22;
+   
+   }
 
   header{
    
@@ -56,24 +48,26 @@ body {
     width: 90%;
     margin: 3% auto 0;
     
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
+    
   }
   
   .alph_cont{
-    width:40%;
+    width:100%;
     padding: 0 5% 0 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap:10px;
     color: black;
     font-family: 'Concert One';
+    position: relative;
+    z-index: 10;
   }
   
     .letter{
       text-align: center;
-      font-size: 30px;
+      font-size: 20px;
       font-weight: 500;
       width: 20px;
       padding: 3% 5%;
@@ -98,7 +92,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    position: absolute;
+    top:20%;
+    left:20%;
+    z-index: 0;
+    opacity: 0.2;
   }
 
 
@@ -263,7 +261,7 @@ body {
     list-style-type: none;
     font-size: 30px;
     color:var(--accent);
-    border-bottom: 5px white solid;
+    border-bottom: 5px black solid;
     text-align: center;
 
     padding: 2% 0;
@@ -272,7 +270,7 @@ body {
   
   .modal_button{
     width: 50%;
-    font-size: 2vw;
+    font-size: 5vw;
     padding: 5px 10px;
     margin: 0 auto 30px;
     border-style: none;
@@ -281,9 +279,11 @@ body {
 
   .fin_text{
     padding: 10%;
-    font-size: 2.5vw;
+    font-size: 5vw;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+   
   }
 
   .finWord{
@@ -296,6 +296,30 @@ body {
     font-style: italic;
   }
 
+  .final_message{
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(36, 35, 35, 0.8);
+  }
+  
+  .final_message_content{
+    width:70%;
+   
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top:30%;
+    background-color: #e8e4ea;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 12;
+  }
+
+  .invalid {
+    color: red;
+}
   
 }
 
@@ -304,6 +328,16 @@ body {
 
 
 @media (min-width:577px){
+  body {
+ 
+    margin: 0;
+    background-image: url('./workingAssets/back.avif');
+    background-color: rgb(201, 201, 202);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size:100%;
+   
+   }
   
   .page_wrapper{
   height: 100vh;
@@ -397,6 +431,9 @@ header p{
     justify-content: center;
     border-color: var(--accent);
     border-style: dashed;
+    position: static;
+    z-index: 0;
+    opacity: 1;
   }
 
   .body{
