@@ -68,7 +68,7 @@
     .letter{
       text-align: center;
       font-size: 20px;
-      font-weight: 500;
+      font-weight: 700;
       width: 20px;
       padding: 3% 5%;
       list-style-type: none;
@@ -316,6 +316,65 @@
     color: rgb(167, 40, 40);
     z-index: 0;
 }
+
+
+.toggle {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.toggle-switch {
+  display: inline-block;
+  background: #56c080;
+  border-radius: 16px;
+  width: 58px;
+  height: 32px;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+}
+.toggle-switch:before, .toggle-switch:after {
+  content: "";
+}
+.toggle-switch:before {
+  display: block;
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: left 0.25s;
+}
+.toggle:hover .toggle-switch:before {
+  background: linear-gradient(to bottom, #ffffff 0%, #fff 100%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.toggle-checkbox:checked + .toggle-switch {
+  background: #f1af09;
+}
+.toggle-checkbox:checked + .toggle-switch:before {
+  left: 30px;
+}
+
+.toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+
+.toggle-label {
+  margin: 0 10px;
+  position: relative;
+  top: 2px;
+  font-weight:500;
+  font-size: 20px;
+  font-family: 'Concert One';
+  color: #3d8109;
+}
   
 }
 
@@ -556,7 +615,7 @@ header p{
     display: block;
     font-size: 30px;
     width: 300px;
-    margin: 150px auto;
+    margin: 150px auto 70px;
     background-color: var(--accent);
     border-radius: 20px;
     padding: 15px 20px;
@@ -616,6 +675,64 @@ header p{
     letter-spacing: 5px;
     font-weight: 800;
     font-style: italic;
+  }
+
+  .toggle {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  .toggle-switch {
+    display: inline-block;
+    background: #56c080;
+    border-radius: 16px;
+    width: 58px;
+    height: 32px;
+    position: relative;
+    vertical-align: middle;
+    transition: background 0.25s;
+  }
+  .toggle-switch:before, .toggle-switch:after {
+    content: "";
+  }
+  .toggle-switch:before {
+    display: block;
+    background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: left 0.25s;
+  }
+  .toggle:hover .toggle-switch:before {
+    background: linear-gradient(to bottom, #ffffff 0%, #fff 100%);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+  }
+  .toggle-checkbox:checked + .toggle-switch {
+    background: #c1e607;
+  }
+  .toggle-checkbox:checked + .toggle-switch:before {
+    left: 30px;
+  }
+  
+  .toggle-checkbox {
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  .toggle-label {
+    margin: 0 10px;
+    position: relative;
+    top: 2px;
+    font-weight:500;
+    font-size: 20px;
+    font-family: 'Concert One';
+    color: #3d8109;
   }
 
 

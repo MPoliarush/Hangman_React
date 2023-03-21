@@ -4,7 +4,7 @@ import InputContext from "./InputContext";
 
 const Alphabet = props =>{
 
-const alphabet = [
+const alphabetENG = [
     {
         letter:"A",
         id:0
@@ -112,6 +112,137 @@ const alphabet = [
  
 ];
 
+const alphabetUA = [
+    {
+        letter:"А",
+        id:0
+    },
+    {
+        letter:"Б",
+        id:1
+    },
+    {
+        letter:"В",
+        id:2
+    },
+    {
+        letter:"Г",
+        id:3
+    },
+    {
+        letter:"Д",
+        id:4
+    },
+    {
+        letter:"Е",
+        id:5
+    },
+    {
+        letter:"Є",
+        id:6
+    },
+    {
+        letter: "Ж",
+        id:7
+    },
+    {
+        letter:"З",
+        id:8
+    },
+    {
+        letter:"И",
+        id:9
+    },
+    {
+        letter:"І",
+        id:10
+    },
+    {
+        letter:"Ї",
+        id:11
+    },
+    {
+        letter:"Й",
+        id:12
+    },
+    {
+        letter:"К",
+        id:13
+    },
+    {
+        letter:"Л",
+        id:14
+    },
+    {
+        letter:"М",
+        id:15
+    },
+    {
+        letter:"Н",
+        id:16
+    },
+    {
+        letter:"О",
+        id:17
+    },
+    {
+        letter:"П",
+        id:18
+    },
+    {
+        letter:"Р",
+        id:19
+    },
+    {
+        letter:"С",
+        id:20
+    },
+    {
+        letter:"Т",
+        id:21
+    },
+    {
+        letter:"У",
+        id:22
+    },
+    {
+        letter:"Ф",
+        id:23
+    },
+    {
+        letter:"Х",
+        id:24
+    },
+    {
+        letter:"Ц",
+        id:25
+    },
+    {
+        letter:"Ч",
+        id:26
+    },
+    {
+        letter:"Ш",
+        id:27
+    },
+    {
+        letter:"Щ",
+        id:28
+    },
+    {
+        letter:"Ь",
+        id:29
+    },
+    {
+        letter:"Ю",
+        id:30
+    },
+    {
+        letter:"Я",
+        id:31
+    }
+]
+
  
 const [gameArr,setGameArr]=useContext(InputContext)
 console.log(gameArr)
@@ -175,7 +306,9 @@ const letterClickHndler=(event)=>{
         <div className="letter" onClick={letterClickHndler}>X</div>
         <div className="letter" onClick={letterClickHndler}>Y</div>
         <div className="letter" onClick={letterClickHndler}>Z</div> */}
-        {alphabet.map((item,index)=>{
+        {gameArr.lang=="ENG"? alphabetENG.map((item,index)=>{
+            return <li key={index} className={isValid.includes(item.letter) ? 'letter invalid' : 'letter'} onClick={letterClickHndler}> {item.letter}</li>
+        }) : alphabetUA.map((item,index)=>{
             return <li key={index} className={isValid.includes(item.letter) ? 'letter invalid' : 'letter'} onClick={letterClickHndler}> {item.letter}</li>
         })}
 

@@ -1,6 +1,6 @@
 import { useState,useContext } from "react";
 
-import words from './assets'
+import {ENG, UA} from './assets'
 
 import Header from "./Header";
 import Modal from "./Modal";
@@ -21,24 +21,46 @@ function App() {
     inputLetter:'',
     randomWord:'',
     wrongLetters:'',
+    lang:'ENG'
   } 
 )
 
-  function inputLetterHadler(){
-   
-  }
   
 
-  function startHandler(){
+  function startHandler(lang){
     setButtonClicked(true)
-    let random = Math.floor(Math.random()*words.length)
-    gameArr.randomWord = words[random]
-    let arrNew = new Array( words[random].length)
-    const wordSt = arrNew.fill('')
-    console.log(wordSt)
-    setGameArr({...gameArr, wordStatus: wordSt ,randomWord:words[random]})
+
+    if(gameArr.lang!=="UA"){
+      let random = Math.floor(Math.random()*ENG.length)
+      gameArr.randomWord = ENG[random]
+      let arrNew = new Array( ENG[random].length)
+      const wordSt = arrNew.fill('')
+      console.log(wordSt)
+      setGameArr({...gameArr, wordStatus: wordSt ,randomWord:ENG[random]})
+    } 
+    
+    if(gameArr.lang=="UA") {
+      console.log('logged!!!!!!!!!!!!!!')
+      let random = Math.floor(Math.random()*UA.length)
+      gameArr.randomWord = UA[random]
+      let arrNew = new Array( UA[random].length)
+      const wordSt = arrNew.fill('')
+      console.log(wordSt)
+      setGameArr({...gameArr, wordStatus: wordSt ,randomWord:UA[random]})
+      console.log(gameArr)
+    }
+    
   }
 
+
+  function langHandler(){
+    const isChecked = document.querySelector('.toggle-checkbox').checked
+    console.log(isChecked)
+
+    if(isChecked){
+      setGameArr({...gameArr, lang:"UA"})
+    } 
+  }
 
 
 
@@ -54,7 +76,15 @@ function App() {
           <Word></Word>
 
           <FinalMessage></FinalMessage>
-        </div> : <button onClick={startHandler}>START GAME</button>
+        </div> 
+        : <div><button onClick={startHandler}>START GAME</button> 
+          <label className="toggle">
+          <span className="toggle-label">ENG</span>
+          <input className="toggle-checkbox" type="checkbox" onClick={langHandler} />
+          <div className="toggle-switch"></div>
+          <span className="toggle-label">UA</span>
+        </label> 
+        </div>
         }
       </InputContext.Provider>
 
